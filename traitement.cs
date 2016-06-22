@@ -1,3 +1,15 @@
+// ************************************************************************** //
+//                                                                            //
+//                                                        :::      ::::::::   //
+//   traitement.cs                                      :+:      :+:    :+:   //
+//                                                    +:+ +:+         +:+     //
+//   By: mmounini <mmounini@student.42.fr>          +#+  +:+       +#+        //
+//                                                +#+#+#+#+#+   +#+           //
+//   Created: 2016/06/23 01:05:11 by mmounini          #+#    #+#             //
+//   Updated: 2016/06/23 01:05:14 by mmounini         ###   ########.fr       //
+//                                                                            //
+// ************************************************************************** //
+
 using System;
 using System.Linq;
 using System.IO;
@@ -13,9 +25,9 @@ class Solution
     static int cst = 0;
     static int[] line = new int[6];
     static int d = 0;
-    static Dictionary<int, int> dico = 
+    static Dictionary<int, int> dico =
             new Dictionary<int, int>();
-    static Dictionary<int, char> dicoline = 
+    static Dictionary<int, char> dicoline =
             new Dictionary<int, char>();
     public class Note : IEquatable<Note> , IComparable<Note>
     {
@@ -62,7 +74,7 @@ class Solution
                 return this.x.CompareTo(comparePart.x);
         }
     }
-    
+
     static void traitement(int W, int H, int size, int full){
         cursor = 0;
         for(int i = 0; i < IMAGE.Length; i+=2)
@@ -119,7 +131,7 @@ class Solution
             cursor += int.Parse(IMAGE[i + 1]);
         }
     }
-    
+
     static void Main(string[] args)
     {
         string[] inputs = Console.ReadLine().Split(' ');
@@ -127,7 +139,7 @@ class Solution
         int W = int.Parse(inputs[0]);
         int H = int.Parse(inputs[1]);
         IMAGE = Console.ReadLine().Split(' ');
-        
+
         for(int i = 0; i < IMAGE.Length; i+=2)
         {
              int yv = cursor / W;
